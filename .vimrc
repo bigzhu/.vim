@@ -131,3 +131,5 @@ set directory=~/.vim/tmp
 map <C-A-c> :ConqueTerm
 map <C-A-v> :ConqueTermTab
 map <f10> :ConqueTermTab bash<cr>
+"nerdtree
+let NERDTreeIgnore = ['\.pyc$','nohup.out']
