@@ -124,8 +124,8 @@ let g:copycat#auto_sync = 1
 "mac
 "set clipboard=unnamed
 
-set backupdir=~/vim_tmp
-set directory=~/vim_tmp
+set backupdir=~/.vim/tmp
+set directory=~/.vim/tmp
 
 "open bash
 map <C-A-c> :ConqueTerm
