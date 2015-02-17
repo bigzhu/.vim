@@ -81,7 +81,7 @@ let wiki.template_default='def_template'
 let wiki.template_ext='.html'
 let wiki.index='wiki_index'
 
-let wiki.nested_syntaxes={'python': 'python', 'c++': 'cpp', 'bash': 'sh', 'as3': 'actionscript', 'mxml': 'mxml', 'sql': 'sql', 'html': 'html', 'java': 'java', 'xml': 'xml', 'js': 'javascript', 'coffee':'javascript'}
+let wiki.nested_syntaxes={'python': 'python', 'c++': 'cpp', 'bash': 'sh', 'as3': 'actionscript', 'mxml': 'mxml', 'sql': 'sql', 'html': 'html', 'java': 'java', 'xml': 'xml', 'js': 'javascript', 'coffee':'javascript', 'less':'less', 'css':'css'}
 "search.py能够正常工作，否则都是在路径 ~/下
 autocmd BufNewFile,BufRead *.wiki cd %:p:h
 
