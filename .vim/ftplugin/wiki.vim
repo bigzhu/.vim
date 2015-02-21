@@ -1,8 +1,9 @@
 "设置vim的路径为打开文件的当前路径，以使得 wiki 的
 "search.py能够正常工作，否则都是在路径 ~/下
 cd %:p:h
-"search
-map <buffer> <f1> :SearchWiki 
+"search 搜索前强制修改路径到 vimwiki 的 data 路径.不能放到 function
+"中,会导致函数执行缓慢,出现黑屏(原因不知)
+map <buffer> <f1> :execute 'silent cd' wiki.path<cr>:SearchWiki 
 " 代码快捷方式
 map <buffer> <f2> a{{{class="brush: "<cr><cr>}}}<Esc>kk$i
 " 生成html并打开
@@ -24,6 +25,8 @@ map <buffer> t wbi[[<Esc>ea]]<Esc>
 if exists("*SearchWiki")
 else
     function! SearchWiki(Name)
+        "首先要设置运行路径,避免路径不同
+        "execute 'silent cd' wiki.path
         execute "silent !search_vimwiki.py '".a:Name."'"
         execute ":redraw!"
         execute "VimwikiGoto search"
