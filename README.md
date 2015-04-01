@@ -2,6 +2,11 @@
 我的 .vim 和 .vimrc 文件
 
 因为我实在太喜欢折腾了. 所以还是记录下历史记录
+# 文件说明
+- .vim 一看就知道
+- .vimrc 一看就知道
+- install.sh 安装脚本. mac 下默认没有 realpath 无法使用
+- .vim/bundle/clone_git.sh 安装需要的 git 库
 
 # change log
 * python 的 F3 改为 PymodeLint,因为保存的时候不一定能正确触发检查.
