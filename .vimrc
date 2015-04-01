@@ -128,8 +128,8 @@ set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
 
 "open bash
-map <C-A-c> :ConqueTerm
-map <C-A-v> :ConqueTermTab
-map <f10> :ConqueTermTab bash<cr>
+"map <C-A-c> :ConqueTerm
+"map <C-A-v> :ConqueTermTab
+"map <f10> :ConqueTermTab bash<cr>
 "nerdtree
 let NERDTreeIgnore = ['\.pyc$','nohup.out']
