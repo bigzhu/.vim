@@ -133,3 +133,10 @@ set directory=~/.vim/tmp
 "map <f10> :ConqueTermTab bash<cr>
 "nerdtree
 let NERDTreeIgnore = ['\.pyc$','nohup.out']
+" When editing a file, always jump to the last cursor position
+autocmd BufReadPost *
+ \ if ! exists("g:leave_my_cursor_position_alone") |
+ \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+ \ exe "normal g'\"" |
+ \ endif |
+ \ endif
