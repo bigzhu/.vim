@@ -1,3 +1,3 @@
 #! /bin/bash
-ln -s "$(realpath .vim)" ~/
-ln -s "$(realpath .vimrc)" ~/
+ln -s ${PWD}/.vim  ~/
+ln -s ${PWD}/.vimrc  ~/
