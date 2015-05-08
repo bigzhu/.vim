@@ -5,7 +5,7 @@
 # 文件说明
 - .vim 一看就知道
 - .vimrc 一看就知道
-- install.sh 安装脚本. mac 下默认没有 realpath 无法使用
+- install.sh 安装脚本. ~~mac 下默认没有 realpath 无法使用~~ 就是建立个软链接到~/下
 - .vim/bundle/clone_git.sh 安装需要的 git 库
 
 # change log
