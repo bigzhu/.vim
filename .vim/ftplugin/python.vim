@@ -7,7 +7,7 @@ let g:pymode_options_max_line_length = 279
 "跳转定义的时候,用 e new vnew tabnew 哪种方式打开
 let g:pymode_rope_goto_definition_cmd = 'tabnew'
 
-let g:pymode_indent = 0
+let g:pymode_indent = 1
 map <buffer> <f1> i#!/usr/bin/env python<cr># -*- coding: utf-8 -*-<cr><cr>if __name__ == '__main__':<cr>pass<Esc>
 "map <buffer> <f2> :Pylint<cr>
 "用autopep8来自动格式化python
