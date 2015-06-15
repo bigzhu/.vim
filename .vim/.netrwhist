@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/bigzhu/monitor/view/static/webapp/config'
-let g:netrw_dirhist_2='/home/bigzhu/Dropbox/knowledge/data'
-let g:netrw_dirhist_3='/home/bigzhu/monitor/view/static/webapp'
-let g:netrw_dirhist_4='/home/bigzhu/monitor/view/static/webapp/app'
-let g:netrw_dirhist_5='/home/bigzhu/monitor/view/static/webapp/app/partials'
-let g:netrw_dirhist_6='/home/bigzhu/monitor/view/static/webapp/app/partials/config'
-let g:netrw_dirhist_7='/home/bigzhu'
-let g:netrw_dirhist_8='/home/bigzhu/Dropbox/my_project/vimblog'
-let g:netrw_dirhist_9='/etc'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/bigzhu'
+let g:netrw_dirhist_2='/Users'
+let g:netrw_dirhist_3='/Users/bigzhu'
+let g:netrw_dirhist_4='/Users/bigzhu/holdv2'

@@ -140,3 +140,7 @@ autocmd BufReadPost *
  \ exe "normal g'\"" |
  \ endif |
  \ endif
+" vimshell
+
+let g:vimshell_popup_command="belowright 10split"
+map <f7> :VimShellPop<CR>

@@ -12,9 +12,9 @@ map <buffer> <f3> :Vimwiki2HTMLBrowse<cr>
 map <buffer> <f4> i{{/static/Screenshots/.png}}<Esc>hhhhhi
 "all search
 map <buffer> <f5> :AllSearchWiki 
-" 打开/创建 Wiki 词条
-map <buffer> <f6> :VimwikiGoto 
-
+" 插入时间
+inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
+inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
 " 包为 wiki 词
 " map T O<Esc>jo<Esc>k0i[[<Esc>$a]]<Esc>
 map <buffer> T wbi[[<Esc>$a]]<Esc>
