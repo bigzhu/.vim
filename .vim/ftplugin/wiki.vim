@@ -8,8 +8,8 @@ map <buffer> <f1> :execute 'silent cd' wiki.path<cr>:SearchWiki
 map <buffer> <f2> a{{{class="brush: "<cr><cr>}}}<Esc>kk$i
 " 生成html并打开
 map <buffer> <f3> :Vimwiki2HTMLBrowse<cr>
-"插入图片链接
-map <buffer> <f4> i{{/static/Screenshots/.png}}<Esc>hhhhhi
+"插入图片链接,加入class
+map <buffer> <f4> i{{/static/Screenshots/.png\|\|class="img-responsive"}}<Esc>
 "all search
 map <buffer> <f5> :AllSearchWiki 
 " 插入时间
