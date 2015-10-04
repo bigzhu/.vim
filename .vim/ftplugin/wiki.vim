@@ -11,16 +11,30 @@ map <buffer> <f3> :Vimwiki2HTMLBrowse<cr>
 "插入图片链接,加入class
 map <buffer> <f4> i{{/static/Screenshots/.png\|\|class="img-responsive"}}<Esc>
 "all search
-map <buffer> <f5> :AllSearchWiki 
+"map <buffer> <f5> :AllSearchWiki 
 " 插入时间
 inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
 inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
+" 查寄存器里里的单词
+"map <buffer> <f7> :!~/git/ydcv/ydcv.py echo @0<cr>
+map <buffer> <f7> :Dict<cr>
 " 包为 wiki 词
 " map T O<Esc>jo<Esc>k0i[[<Esc>$a]]<Esc>
 map <buffer> T wbi[[<Esc>$a]]<Esc>
 
 map <buffer> t wbi[[<Esc>ea]]<Esc>
+
+if exists("*Dict")
+else
+    function! Dict()
+        let translated = system("~/git/ydcv/ydcv.py " .  @0)
+        echo translated
+    endfunction
+endif
+
 "找 wiki 词 
+
+command! -buffer Dict call Dict()
 
 if exists("*SearchWiki")
 else
@@ -33,7 +47,7 @@ else
     endfunction
 endif
 
- command! -buffer -nargs=1 SearchWiki call SearchWiki("<args>")
+command! -buffer -nargs=1 SearchWiki call SearchWiki("<args>")
 autocmd FileType markdown command! -buffer -nargs=1 SearchWiki call SearchWiki("<args>")
 "全文查找 
 if exists("*SearchWiki")
