@@ -9,6 +9,7 @@
 - .vim/bundle/clone_git.sh 安装需要的 git 库
 
 # change log
+* 改为vimwiki下，光标在单词上, 空格可以查看单词意思
 * vimwiki下，复制单词后，按F7可以查看单词意思
 * python 的 F3 改为 PymodeLint,因为保存的时候不一定能正确触发检查.
 * 一些文件不需要在 nerdtree 里面显示

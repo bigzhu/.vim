@@ -17,7 +17,7 @@ inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<c
 inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
 " 查寄存器里里的单词
 "map <buffer> <f7> :!~/git/ydcv/ydcv.py echo @0<cr>
-map <buffer> <f7> :Dict<cr>
+nnoremap <Space> yiw :Dict<cr>
 " 包为 wiki 词
 " map T O<Esc>jo<Esc>k0i[[<Esc>$a]]<Esc>
 map <buffer> T wbi[[<Esc>$a]]<Esc>
@@ -32,10 +32,9 @@ else
     endfunction
 endif
 
-"找 wiki 词 
-
 command! -buffer Dict call Dict()
 
+"找 wiki 词 
 if exists("*SearchWiki")
 else
     function! SearchWiki(Name)
