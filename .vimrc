@@ -63,6 +63,8 @@ filetype plugin indent on
 "VIMWIKI-------------------------------------------------------------------------------------------------------------------------------------------------------
 "--------------------------------------------------------------------------------------------------------------------------------------------------------------
 autocmd BufNewFile,BufRead *.wiki set filetype=wiki
+"把字幕文件当wiki，方便查词
+autocmd BufNewFile,BufRead *.srt set filetype=wiki
 "vimwiki 配置文件
 let wiki = {}
 "保存时是否自动生成html
@@ -144,3 +146,6 @@ autocmd BufReadPost *
 
 let g:vimshell_popup_command="belowright 10split"
 map <f7> :VimShellPop<CR>
+
+"支持vue高亮
+autocmd BufNewFile,BufRead *.vue set filetype=html
