@@ -9,4 +9,5 @@ git clone https://github.com/evanmiller/nginx-vim-syntax
 git clone https://github.com/Raimondi/delimitMate # 括号补全
 git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript # 让嵌入html的js也能正确格式化
 #git clone https://github.com/darthmall/vim-vue.git #vim vue
-git clone https://github.com/posva/vim-vue
+git clone https://github.com/posva/vim-vue #vue 的高亮
+git clone https://github.com/jiangmiao/simple-javascript-indenter # 解决没有分号时候的自动格式化缩进
