@@ -5,6 +5,9 @@ Based on the default htmlcomplete.vim.
 
 This plugin contributes to [vim-polyglot](https://github.com/sheerun/vim-polyglot) language pack.
 
+## Modify by BigZhu
+- make html5 works fine with vue file type: you can use `gg=G` format code
+
 ## Feature
 
 - Support all new elements and attribute.
