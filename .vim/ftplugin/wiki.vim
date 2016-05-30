@@ -3,7 +3,7 @@
 cd %:p:h
 "search 搜索前强制修改路径到 vimwiki 的 data 路径.不能放到 function
 "中,会导致函数执行缓慢,出现黑屏(原因不知)
-map <buffer> <f1> :execute 'silent cd' wiki.path<cr>:SearchWiki 
+map <buffer> <c-f> :execute 'silent cd' wiki.path<cr>:SearchWiki 
 " 代码快捷方式
 map <buffer> <f2> a{{{class="brush: "<cr><cr>}}}<Esc>kk$i
 " 生成html并打开
