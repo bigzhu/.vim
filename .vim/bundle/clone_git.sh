@@ -15,3 +15,4 @@ git clone https://github.com/jiangmiao/simple-javascript-indenter # 解决没有
 git clone https://github.com/bigzhu/html5.vim #让其支持vue
 git clone https://github.com/scrooloose/syntastic.git # 语法检查
 git clone https://github.com/sekel/vim-vue-syntastic.git #让syntastic支持vue
+git clone https://github.com/rizzatti/dash.vim.git #call dash from vim
