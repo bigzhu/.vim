@@ -169,7 +169,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-"call Dash from vim
 
+"改用syntastic来做python lint
+let g:pymode_lint_write = 0
+let g:syntastic_python_flake8_args='--ignore=E501'
+"let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+"call Dash from vim
 map <c-d> :Dash 
