@@ -149,6 +149,7 @@ map <f7> :VimShellPop<CR>
 
 "支持vue高亮
 "autocmd BufNewFile,BufRead *.vue set filetype=html
+autocmd BufNewFile,BufRead *.vue set filetype=vue
 "vim-vue-syntastic
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_vue_checkers = ['eslint']
@@ -176,3 +177,5 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "call Dash from vim
 map <c-d> :Dash 
+"vim commander
+noremap <silent> <F11> :cal VimCommanderToggle()<CR>
