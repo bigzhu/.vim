@@ -34,7 +34,8 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,latin1
 "colorscheme 主题/配色
 set t_Co=256
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
+colorscheme molokai
 "set background=dark
 "colorscheme solarized
 
