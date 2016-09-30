@@ -113,7 +113,7 @@ endif
 "tree
 "shift+i 显示隐藏文件
 "默认打开tree
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 "autocmd VimEnter * NERDTree
 "tab \n 打开关闭 tree
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
@@ -178,5 +178,3 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "call Dash from vim
 map <c-d> :Dash 
-"vim commander
-noremap <silent> <F11> :cal VimCommanderToggle()<CR>
