@@ -179,4 +179,4 @@ autocmd BufEnter * lcd %:p:h
 let g:vimshell_editor_command = '~/'
 let g:vimshell_popup_command="belowright 10split"
 let g:vimshell_prompt = $USER."$ "
-map <f7> :VimShellPop `pwd` <CR>
+map <f7> :VimShellCurrentDir -popup <CR>
