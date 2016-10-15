@@ -7,6 +7,9 @@ This plugin contributes to [vim-polyglot](https://github.com/sheerun/vim-polyglo
 
 ## Modify by BigZhu
 - make html5 works fine with vue file type: you can use `gg=G` format code
+- fix javascript indent error: http://stackoverflow.com/questions/620247/how-do-i-fix-incorrect-inline-javascript-indentation-in-vim
+    use http://www.vim.org/scripts/script.php?script_id=3081 indent/javascript.vim 
+
 
 ## Feature
 

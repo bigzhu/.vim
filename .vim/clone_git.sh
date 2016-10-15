@@ -1,4 +1,5 @@
 #! /bin/bash
+cd bundle
 git clone git@github.com:bigzhu/nerdtree.git
 git clone https://github.com/vimwiki/vimwiki.git
 git clone https://github.com/klen/python-mode

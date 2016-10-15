@@ -34,8 +34,8 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,chinese,latin1
 "colorscheme 主题/配色
 set t_Co=256
-"colorscheme Tomorrow-Night
-colorscheme molokai
+colorscheme Tomorrow-Night
+"colorscheme molokai
 "set background=dark
 "colorscheme solarized
 
@@ -110,22 +110,6 @@ else
       let &t_SI = "\<Esc>]50;CursorShape=1\x7"
       let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-"tree
-"shift+i 显示隐藏文件
-"默认打开tree
-"let g:nerdtree_tabs_open_on_console_startup=1
-"autocmd VimEnter * NERDTree
-"tab \n 打开关闭 tree
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
-"让tree打开在tab
-autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
-"vim和系统共用剪切板
-let g:copycat#auto_sync = 1
-"同个文件,只激活tab
-"set switchbuf=usetab
-
-"mac
-"set clipboard=unnamed
 
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
@@ -143,10 +127,11 @@ autocmd BufReadPost *
  \ exe "normal g'\"" |
  \ endif |
  \ endif
-" vimshell
-
+"VimShell----------------------------------------------------------------
+let g:vimshell_editor_command = '~/'
 let g:vimshell_popup_command="belowright 10split"
-map <f7> :VimShellPop<CR>
+let g:vimshell_prompt = $USER."$ "
+map <f7> :VimShellPop getcwd() <CR>
 
 "支持vue高亮
 "autocmd BufNewFile,BufRead *.vue set filetype=html
@@ -178,3 +163,23 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "call Dash from vim
 map <c-d> :Dash 
+"NERDTree-----------------------------------------------------------------------------
+"tree
+"shift+i 显示隐藏文件
+"默认打开tree
+let g:nerdtree_tabs_open_on_console_startup=1
+"默认打开时，光标总是落在内容上
+let g:nerdtree_tabs_smart_startup_focus = 2
+"autocmd VimEnter * NERDTree
+"tab \n 打开关闭 tree
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"让tree打开在tab
+autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
+"vim和系统共用剪切板
+let g:copycat#auto_sync = 1
+"同个文件,只激活tab
+"set switchbuf=usetab
+
+"mac
+"set clipboard=unnamed
+
