@@ -1,5 +1,7 @@
 "--------------------------------------------------------------------------------------------------------------------------------------------------------------
 "VIM-----------------------------------------------------------------------------------------------------------------------------------------------------------
+"vim和系统共用剪切板
+let g:copycat#auto_sync = 1
 "用文件类型plugin脚本
 filetype plugin on
 "自动 read 变化
@@ -114,12 +116,6 @@ endif
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
 
-"open bash
-"map <C-A-c> :ConqueTerm
-"map <C-A-v> :ConqueTermTab
-"map <f10> :ConqueTermTab bash<cr>
-"nerdtree
-let NERDTreeIgnore = ['\.pyc$','nohup.out', 'node_modules']
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
  \ if ! exists("g:leave_my_cursor_position_alone") |
@@ -127,11 +123,7 @@ autocmd BufReadPost *
  \ exe "normal g'\"" |
  \ endif |
  \ endif
-"VimShell----------------------------------------------------------------
-let g:vimshell_editor_command = '~/'
-let g:vimshell_popup_command="belowright 10split"
-let g:vimshell_prompt = $USER."$ "
-map <f7> :VimShellPop getcwd() <CR>
+
 
 "支持vue高亮
 "autocmd BufNewFile,BufRead *.vue set filetype=html
@@ -164,7 +156,6 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 "call Dash from vim
 map <c-d> :Dash 
 "NERDTree-----------------------------------------------------------------------------
-"tree
 "shift+i 显示隐藏文件
 "默认打开tree
 let g:nerdtree_tabs_open_on_console_startup=1
@@ -175,11 +166,17 @@ let g:nerdtree_tabs_smart_startup_focus = 2
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 "让tree打开在tab
 autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
-"vim和系统共用剪切板
-let g:copycat#auto_sync = 1
+let NERDTreeIgnore = ['\.pyc$','nohup.out', 'node_modules']
+"打开文件时改变path
+autocmd BufEnter * lcd %:p:h
+
 "同个文件,只激活tab
 "set switchbuf=usetab
 
 "mac
 "set clipboard=unnamed
-
+"VimShell-------------------------------------------------------------------------------------------------------
+let g:vimshell_editor_command = '~/'
+let g:vimshell_popup_command="belowright 10split"
+let g:vimshell_prompt = $USER."$ "
+map <f7> :VimShellPop `pwd` <CR>
