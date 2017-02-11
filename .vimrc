@@ -77,7 +77,7 @@ let wiki.auto_export=1
 " 是否在计算字串长度时用特别考虑中文字符
 let wiki.vimwiki_CJK_length=1
 let wiki.index='index'
-"let wiki.syntax='markdown'
+let wiki.syntax='markdown'
 "使用markdown语法
 let wiki.path='~/Dropbox/knowledge/data/'
 let wiki.path_html='~/Dropbox/knowledge/html/'
@@ -180,6 +180,12 @@ let g:vimshell_editor_command = '~/'
 let g:vimshell_popup_command="belowright 10split"
 let g:vimshell_prompt = $USER."$ "
 map <f5> :VimShellCurrentDir -popup <CR>
+map <c-g> :VimShellCurrentDir -popup <CR>
 
 "把 - 连接的当做一个单词
 set iskeyword+=-
+"show file name in bottom
+set statusline+=%F
+set laststatus=2
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
