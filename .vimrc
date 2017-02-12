@@ -180,7 +180,7 @@ let g:vimshell_editor_command = '~/'
 let g:vimshell_popup_command="belowright 10split"
 let g:vimshell_prompt = $USER."$ "
 map <f5> :VimShellCurrentDir -popup <CR>
-map <c-g> :VimShellCurrentDir -popup <CR>
+map <c-s> :VimShellCurrentDir -popup <CR>
 
 "把 - 连接的当做一个单词
 set iskeyword+=-
@@ -189,3 +189,6 @@ set statusline+=%F
 set laststatus=2
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
+" markdown--------------------------------------------------------------------------------------------------------------
+let md_path='~/Dropbox/blog/data/'
+map <buffer> <c-f> :execute 'silent cd' md_path<cr>:SearchWiki
