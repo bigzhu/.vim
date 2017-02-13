@@ -193,7 +193,7 @@ autocmd InsertLeave * set nocul
 let g:md_path='/Users/bigzhu/Dropbox/blog/data/'
 map <c-f> :execute 'silent cd' md_path<cr>:SearchMD 
 " 取到v 下选中的值, 再用 open 打开
-map <c-g> 0v$<esc>:open 'echo getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]]'
+map <c-g> 0v$<esc>: execute "open ".getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]]<cr>
 
 "找 md 
 if exists("*SearchMD")
