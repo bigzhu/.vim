@@ -208,4 +208,4 @@ else
     endfunction
 endif
 
-command! -buffer -nargs=1 SearchMD call SearchMD("<args>")
+command! -nargs=1 SearchMD call SearchMD("<args>")
