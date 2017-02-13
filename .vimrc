@@ -180,7 +180,7 @@ let g:vimshell_editor_command = '~/'
 let g:vimshell_popup_command="belowright 10split"
 let g:vimshell_prompt = $USER."$ "
 map <f5> :VimShellCurrentDir -popup <CR>
-map <c-s> :VimShellCurrentDir -popup <CR>
+nmap <c-s> :VimShellCurrentDir -popup <CR>
 
 "把 - 连接的当做一个单词
 set iskeyword+=-
@@ -190,5 +190,22 @@ set laststatus=2
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 " markdown--------------------------------------------------------------------------------------------------------------
-let md_path='~/Dropbox/blog/data/'
-map <buffer> <c-f> :execute 'silent cd' md_path<cr>:SearchWiki
+let g:md_path='/Users/bigzhu/Dropbox/blog/data/'
+map <c-f> :execute 'silent cd' md_path<cr>:SearchMD 
+" 取到v 下选中的值, 再用 open 打开
+map <c-g> 0v$<esc>:open 'echo getline("'<")[getpos("'<")[2]-1:getpos("'>")[2]]'
+
+"找 md 
+if exists("*SearchMD")
+else
+    function! SearchMD(Name)
+        "首先要设置运行路径,避免路径不同
+        "execute 'silent cd' wiki.path
+        ":  echom "silent !markdown_search.py '".g:md_path."' '".a:Name."'"
+        execute "silent !markdown_search.py '".g:md_path."' '".a:Name."'"
+        execute ":redraw!"
+        execute "open search.md"
+    endfunction
+endif
+
+command! -buffer -nargs=1 SearchMD call SearchMD("<args>")
