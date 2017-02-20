@@ -7,7 +7,8 @@ let g:nerdtree_tabs_open_on_console_startup=0
 let g:md_path='/Users/bigzhu/Dropbox/blog/data/'
 map <buffer> <c-f> :execute 'silent cd' md_path<cr>:SearchMD 
 " map <buffer> <c-g> 0v$gf 
-:nmap <f2> :!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "%" <cr>
+:nmap <f2> :GenTocGFM <cr>
+:nmap <f4> :!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "%" <cr>
 
 "找 md 
 if exists("*SearchMD")
