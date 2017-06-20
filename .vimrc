@@ -163,4 +163,4 @@ command! -nargs=1 SearchMD call SearchMD("<args>")
 set tags=/Users/bigzhu/gts_sale/tags
 " Persistent Undo in Vim
 set undofile " Maintain undo history between sessions
-set undodir=~/.vim/undodir
+set undodir=~/.vim_undo
