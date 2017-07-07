@@ -168,3 +168,9 @@ set tags=/Users/bigzhu/gts_sale/tags
 " Persistent Undo in Vim
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim_undo
+
+" diff 时不要有那么多高亮颜色
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
