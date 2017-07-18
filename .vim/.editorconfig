@@ -25,3 +25,4 @@ path=~/.vim/bundle/vim-jsbeautify/node_modules/js-beautify/js/lib/beautify-html.
 indent_style = space
 indent_size = 2
 brace_style = collapse
+max_char = 780
