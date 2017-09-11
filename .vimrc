@@ -66,8 +66,8 @@ else
       let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-set backupdir=~/.vim/tmp
-set directory=~/.vim/tmp
+"set backupdir=~/.vim/tmp
+"set directory=~/.vim/tmp
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -141,7 +141,7 @@ set laststatus=2
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 " markdown--------------------------------------------------------------------------------------------------------------
-let g:md_path='/Users/bigzhu/Dropbox/blog/'
+let g:md_path='~/Dropbox/blog/'
 map <c-f> :execute 'silent cd' md_path<cr>:SearchMD 
 " 用这一行来跳转文件(search 时用)
 nmap <c-g> 0v$<esc>: execute "open ".getline("'<").".md"<cr>
@@ -174,3 +174,14 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
