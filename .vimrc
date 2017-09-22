@@ -66,8 +66,8 @@ else
       let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-"set backupdir=~/.vim/tmp
-"set directory=~/.vim/tmp
+set backupdir=~/tmp
+set directory=~/tmp
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -185,3 +185,6 @@ if has("autocmd")
     \ endif
   au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
+" react
+let g:jsx_ext_required = 0
+" add ' befor ,

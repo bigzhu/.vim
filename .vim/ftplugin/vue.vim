@@ -9,3 +9,5 @@ filetype indent on
 setlocal softtabstop=2
 setlocal tabstop=2
 setlocal shiftwidth=2
+" 避免折叠导致的语法高亮失效
+autocmd FileType vue syntax sync fromstart
