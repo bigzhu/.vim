@@ -188,3 +188,4 @@ endif
 " react
 let g:jsx_ext_required = 0
 " add ' befor ,
+nnoremap <c-c> :TableAddFormula <cr> Sum(1:-1) <cr>

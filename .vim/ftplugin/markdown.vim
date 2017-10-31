@@ -6,6 +6,8 @@ let g:nerdtree_tabs_open_on_console_startup=0
 " map <buffer> <c-g> 0v$gf 
 :nmap <f2> :GenTocGFM <cr>
 :nmap <f4> :!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "%" <cr>
+" 插入当前时间
+:inoremap <buffer> <c-n> <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 
 " for vim-table-mode
 let g:table_mode_corner='|'
