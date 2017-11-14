@@ -1,8 +1,8 @@
 
 cd %:p:h
-
+let g:pymode_python = 'python3'
 let g:pymode_lint_ignore = "E501,W0403,C0110,C0301,W0703,R0201,E265"
-let g:pymode_rope = 1
+"let g:pymode_rope = 1
 let g:pymode_rope_autoimport = 0
 "关了自动补全,太慢了.
 let g:pymode_rope_completion=0

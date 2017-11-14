@@ -188,4 +188,5 @@ endif
 " react
 let g:jsx_ext_required = 0
 " add ' befor ,
-nnoremap <c-c> :TableAddFormula <cr> Sum(1:-1) <cr>
+"nnoremap <c-c> :TableAddFormula <cr> Sum(1:-1) <cr>
+"和python的代码跳转冲突了
