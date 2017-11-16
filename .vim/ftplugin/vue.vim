@@ -11,3 +11,5 @@ setlocal tabstop=2
 setlocal shiftwidth=2
 " 避免折叠导致的语法高亮失效
 autocmd FileType vue syntax sync fromstart
+"eslint
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
