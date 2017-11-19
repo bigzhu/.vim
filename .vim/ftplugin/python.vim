@@ -9,8 +9,7 @@ map <buffer> <f1> i#!/usr/bin/env python<cr># -*- coding: utf-8 -*-<cr><cr>if __
 map <buffer> <f2> :0,$!yapf --style='{COLUMN_LIMIT=10000}'<CR>
 " 整理 import
 map <buffer> <f3> :!isort %<CR><CR>
-"map <buffer> <f3> :w<cr>:!python %  test <cr>
-map <buffer> <f4> :w<cr> :cd %:p:h<cr> :!python %<cr>
+map <buffer> <f4> :AsyncRun! python %<cr>
 "插入生成代码的相关信息
 inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
 inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
