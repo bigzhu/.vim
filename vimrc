@@ -17,6 +17,11 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+"tab 改为 4 空格
+set expandtab "是否将输入的TAB自动展开成空格。开启后要输入TAB，需要Ctrl-V<TAB>
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
 
 "NERDTree-----------------------------------------------------------------------------------------------------------------------
 "shift+i 显示隐藏文件
