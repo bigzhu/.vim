@@ -1,6 +1,6 @@
 
 cd %:p:h
-let g:ale_python_flake8_options = "--ignor='E501,E265'"
+let g:ale_python_flake8_options = "--ignor='E501,E265,E402'"
 set foldmethod=indent
 
 map <buffer> <f1> i#!/usr/bin/env python<cr># -*- coding: utf-8 -*-<cr><cr>if __name__ == '__main__':<cr>import doctest<cr>doctest.testmod(verbose=False, optionflags=doctest.ELLIPSIS)<Esc>

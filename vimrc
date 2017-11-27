@@ -8,7 +8,7 @@ filetype plugin indent on
 "语法高亮
 syntax on
 "colorscheme 主题/配色
-set t_Co=256
+"set t_Co=256
 colorscheme Tomorrow-Night
 set linebreak "vim 换行时不切断单词
 set hlsearch "高亮查找字符
