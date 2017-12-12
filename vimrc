@@ -24,6 +24,9 @@ set tabstop=4
 set shiftwidth=4
 "把 - 横线连接的当做一个单词
 set iskeyword+=-
+"临时文件统一存放
+set backupdir=~/tmp
+set directory=~/tmp
 
 "NERDTree-----------------------------------------------------------------------------------------------------------------------
 "shift+i 显示隐藏文件

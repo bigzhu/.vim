@@ -25,3 +25,6 @@ inoreabbrev <expr> <bar><bar>
 inoreabbrev <expr> __
           \ <SID>isAtStartOfLine('__') ?
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
+
+
+map <buffer> <f1> idraft: true<cr>date:<c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr><cr>cover: /images/avatar.jpeg<cr>tags:<cr>    - bigzhu<cr><BS><BS><BS>preview:<cr><cr>---<cr><!--more--><cr><Esc>
