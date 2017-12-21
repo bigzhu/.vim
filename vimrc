@@ -1,4 +1,5 @@
 " 基本配置-----------------------------------------------------------------------------------------------------------------------
+let g:neocomplete#enable_at_startup = 1
 " Pathogen load
 filetype off
 call pathogen#infect()
