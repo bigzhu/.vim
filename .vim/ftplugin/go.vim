@@ -19,4 +19,8 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.go = '[^.[:digit:] *\t]\.'
 
-
+" 自动折叠
+set foldmethod=syntax
+set foldnestmax=1  
+set foldlevel=20
+set foldlevelstart=20
