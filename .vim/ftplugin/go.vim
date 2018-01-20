@@ -13,15 +13,12 @@ filetype plugin indent on
 
 " 保存时执行检查
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['errcheck', 'golint']
 " 保存时检查后不要出现等待 press
 let g:go_echo_command_info=0
 
-let g:go_fmt_fail_silently = 1
-
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['gometalinter']
-let g:syntastic_go_gometalinter_args = ['--disable-all']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
