@@ -8,6 +8,7 @@ let g:nerdtree_tabs_open_on_console_startup=0
 :nmap <f4> :!/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome "%" <cr>
 " 插入当前时间
 :inoremap <buffer> <c-n> <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+":nmap <c-m> :TableAddFormula<cr>Sum(1:-1)<cr>
 
 " for vim-table-mode
 let g:table_mode_corner='|'
@@ -27,4 +28,4 @@ inoreabbrev <expr> __
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 
-map <buffer> <f1> idraft: true<cr>date:<c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr><cr>cover: /images/avatar.jpeg<cr>tags:<cr>    - bigzhu<cr><BS><BS><BS>preview:<cr><cr>---<cr><!--more--><cr><Esc>
+map <buffer> <f1> idraft: true<cr>date: <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr><cr>cover: /images/avatar.jpeg<cr>tags:<cr>    - bigzhu<cr><BS><BS><BS>preview:<cr><cr>---<cr><!--more--><cr><Esc>
