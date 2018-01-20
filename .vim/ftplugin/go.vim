@@ -11,9 +11,11 @@ inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<c
 " set foldmethod=indent
 filetype plugin indent on
 
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['golint', 'errcheck']
+
 let g:go_fmt_command = "goimports"
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_go_checkers = ['golint', 'govet', 'gometalinter']
+let g:syntastic_go_checkers = ['gometalinter']
 let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
