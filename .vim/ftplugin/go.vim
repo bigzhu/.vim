@@ -1,6 +1,14 @@
-map <buffer> <leader>d :GoDef<cr>
+"允许覆盖默认映射
+let g:go_def_mapping_enabled = 0
+" GoReferrers 时, 下方显示的内容
+let g:go_list_height = 6
+" 跳转到定义时, 打开新 tab
+au FileType go nmap gd <Plug>(go-def-tab)
+au FileType go nmap gr <Plug>(go-referrers)
+" 跳转到定义时 激活已打开的 tab
+let g:go_def_reuse_buffer = 1
 
-nmap <buffer> gr :GoReferrers<cr>
+
 
 "插入生成代码的相关信息
 map <buffer> <f2> :GoErrCheck<cr> 
@@ -33,5 +41,4 @@ set foldmethod=syntax
 set foldlevel=20
 set foldlevelstart=20
 
-" GoReferrers 时, 下方显示的内容
-let g:go_list_height = 6
+
