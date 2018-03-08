@@ -38,6 +38,8 @@ Plug '~/my-prototype-plugin'
 " Initialize plugin system
 call plug#end()
 " 基本配置-----------------------------------------------------------------------------------------------------------------------
+
+
 let g:neocomplete#enable_at_startup = 1
 " Pathogen load
 filetype off
@@ -50,6 +52,13 @@ syntax on
 "colorscheme 主题/配色
 "set t_Co=256
 colorscheme Tomorrow-Night
+
+" 开启拼写检查, 只检查英文
+set spell spelllang=en_us,cjk
+" SpellBad 错误的样式修改, 要放在 colorscheme 后,不然会被覆盖
+highlight clear SpellBad
+highlight SpellBad cterm=underline ctermfg=red
+
 set linebreak "vim 换行时不切断单词
 set hlsearch "高亮查找字符
 "diff 时不要有那么多高亮颜色
@@ -125,3 +134,4 @@ augroup MyGroup
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
 augroup END
 "--------------------------------------------------------------------------------------------end
+
