@@ -8,8 +8,6 @@ au FileType go nmap gr <Plug>(go-referrers)
 " 跳转到定义时 激活已打开的 tab
 let g:go_def_reuse_buffer = 1
 
-
-
 "插入生成代码的相关信息
 map <buffer> <f2> :GoErrCheck<cr> 
 inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
@@ -30,10 +28,10 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
 " Enable heavy omni completion.
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.go = '[^.[:digit:] *\t]\.'
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"  let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"let g:neocomplete#force_omni_input_patterns.go = '[^.[:digit:] *\t]\.'
 
 " 自动折叠
 set foldmethod=syntax
@@ -43,3 +41,7 @@ set foldlevelstart=20
 "quickfix里都选择打开newtab
 set switchbuf=newtab
 
+" 增加性能: https://github.com/fatih/vim-go/issues/145
+set nocursorcolumn
+syntax sync minlines=256
+set re=1
