@@ -45,3 +45,5 @@ set switchbuf=newtab
 set nocursorcolumn
 syntax sync minlines=256
 set re=1
+" 对go 默认打开右边函数列
+TagbarOpen
