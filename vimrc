@@ -1,50 +1,23 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*' }
-
-" Plugin options
-"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-
-
-" Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
-
-" Initialize plugin system
-call plug#end()
 " 基本配置-----------------------------------------------------------------------------------------------------------------------
+" 自动补全
+"let g:neocomplete#enable_at_startup = 1
 
-
-let g:neocomplete#enable_at_startup = 1
 " Pathogen load
+set nocompatible              " be iMproved, required
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
+"Vundle plugin install
+
+" set the runtime path to include Vundle and initialize
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+call vundle#end()            " required
 "自动识别文件类型
 filetype plugin indent on
 "语法高亮
@@ -74,6 +47,9 @@ set shiftwidth=4
 "临时文件统一存放
 set backupdir=~/tmp
 set directory=~/tmp
+" del 增强模式
+set backspace=indent,eol,start
+
 
 "NERDTree-----------------------------------------------------------------------------------------------------------------------
 "shift+i 显示隐藏文件
@@ -133,5 +109,13 @@ let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
 augroup MyGroup
     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
 augroup END
-"--------------------------------------------------------------------------------------------end
+" --------------------------------------------------------------------------------------------- ultisnips
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"--------------------------------------------------------------------------------------------end

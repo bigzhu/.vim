@@ -1,3 +1,5 @@
+" 对go 默认打开右边函数列
+TagbarOpen
 "允许覆盖默认映射
 let g:go_def_mapping_enabled = 0
 " GoReferrers 时, 下方显示的内容
@@ -11,8 +13,15 @@ let g:go_def_reuse_buffer = 1
 "插入生成代码的相关信息
 map <buffer> <f2> :GoErrCheck<cr> 
 inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
-map <buffer> <f4> :w<cr> :GoRun<cr>
+" 对这个函数测试
+map <buffer> <f4> :GoTestFunc<cr>
 inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
+" 自动插入对 err 处理
+inoremap <buffer> <C-e> if err != nil {<cr>return<cr>}<cr><esc> 
+
+
+
+" 对这个函数测试
 filetype plugin indent on
 
 " 保存时执行检查
@@ -25,7 +34,8 @@ let g:go_echo_command_info=0
 let g:go_fmt_command = "goimports"
 let g:syntastic_go_checkers = ['gometalinter']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-let g:go_list_type = "quickfix"
+"let g:go_list_type = "quickfix"
+let g:go_list_type = "locationlist"
 
 " Enable heavy omni completion.
 "if !exists('g:neocomplete#force_omni_input_patterns')
@@ -45,5 +55,6 @@ set switchbuf=newtab
 set nocursorcolumn
 syntax sync minlines=256
 set re=1
-" 对go 默认打开右边函数列
-TagbarOpen
+
+" ctrl + l 显示代码提示, ctrl + o 和 iterm 冲突了
+inoremap <buffer> <C-l> <C-x><C-o>
