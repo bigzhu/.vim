@@ -26,14 +26,20 @@ syntax on
 "set t_Co=256
 colorscheme Tomorrow-Night
 
+"自动 read 变化
+set autoread 
+autocmd CursorHold * checktime "光标放一段时间,插件文件是否变化
+autocmd TabEnter * checktime "刚进入 tab 检查是否发生变化
+
 " 开启拼写检查, 只检查英文
 set spell spelllang=en_us,cjk
-" SpellBad 错误的样式修改, 要放在 colorscheme 后,不然会被覆盖
-highlight clear SpellBad
+highlight clear SpellBad " SpellBad 错误的样式修改, 要放在 colorscheme 后,不然会被覆盖
 highlight SpellBad cterm=underline ctermfg=red
 
-set linebreak "vim 换行时不切断单词
-set hlsearch "高亮查找字符
+"vim 换行时不切断单词
+set linebreak 
+"高亮查找字符
+set hlsearch 
 "diff 时不要有那么多高亮颜色
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -49,7 +55,6 @@ set backupdir=~/tmp
 set directory=~/tmp
 " del 增强模式
 set backspace=indent,eol,start
-
 
 "NERDTree-----------------------------------------------------------------------------------------------------------------------
 "shift+i 显示隐藏文件
