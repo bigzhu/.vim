@@ -1,5 +1,5 @@
 " 对go 默认打开右边函数列
-TagbarOpen
+"TagbarOpen
 "允许覆盖默认映射
 let g:go_def_mapping_enabled = 0
 " GoReferrers 时, 下方显示的内容
@@ -13,13 +13,13 @@ let g:go_def_reuse_buffer = 1
 "插入生成代码的相关信息
 map <buffer> <f2> :GoErrCheck<cr> 
 inoremap <buffer> <f5> create by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
+" 生成测试结构
+map <buffer> <f3> :GoTests<cr>
 " 对这个函数测试
 map <buffer> <f4> :GoTestFunc<cr>
 inoremap <buffer> <f6> modify by bigzhu at <c-r>=strftime("%y/%m/%d %H:%M:%S")<cr> 
 " 自动插入对 err 处理
 inoremap <buffer> <C-e> if err != nil {<cr>return<cr>}<cr><esc> 
-
-
 
 " 对这个函数测试
 filetype plugin indent on
