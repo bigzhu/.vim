@@ -29,3 +29,19 @@ inoreabbrev <expr> __
 
 
 map <buffer> <f1> idraft: false<cr>date: <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr><cr>cover: /images/avatar.jpeg<cr>tags:<cr>    - bigzhu<cr><BS><BS><BS>preview:<cr><cr>---<cr><!--more--><cr><Esc>
+
+let g:tagbar_type_markdown = {
+        \ 'ctagstype' : 'markdown',
+        \ 'kinds' : [
+                \ 'h:headings',
+        \ ],
+    \ 'sort' : 0
+\ }
+
+let g:nerdtree_tabs_open_on_console_startup=0
+" 关闭NERDTree
+NERDTreeTabsClose
+" markdown 默认打开
+let g:tagbar_left = 1
+TagbarOpen
+
