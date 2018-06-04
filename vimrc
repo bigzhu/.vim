@@ -125,3 +125,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 "--------------------------------------------------------------------------------------------end
 execute pathogen#infect()
+
+autocmd FileType vue syntax sync fromstart
+
+if v:version >= 703
+    set undodir=~/.vimundodir
+    set undofile
+endif
