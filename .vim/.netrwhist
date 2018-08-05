@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/bigzhu'
-let g:netrw_dirhist_2='/Users'
-let g:netrw_dirhist_3='/Users/bigzhu'
-let g:netrw_dirhist_4='/Users/bigzhu/holdv2'
-let g:netrw_dirhist_5='/Users/bigzhu/Dropbox/project_bz/vim_conf/.vim/bundle/vim-stylus'
-let g:netrw_dirhist_6='/Users/bigzhu/Dropbox/project_bz/vim_conf/.vim/bundle/vim-stylus/indent'

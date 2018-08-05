@@ -52,7 +52,7 @@ set tabstop=4
 set shiftwidth=4
 "临时文件统一存放
 set backupdir=~/.tmp
-set directory=~/tmp
+set directory=~/.tmp
 " del 增强模式
 set backspace=indent,eol,start
 
