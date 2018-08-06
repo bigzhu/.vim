@@ -5,6 +5,7 @@
 Syntax highlighting, matching rules and mappings for [the original Markdown](http://daringfireball.net/projects/markdown/) and extensions.
 
 1. [Installation](#installation)
+1. [Basic usage](#basic-usage)
 1. [Options](#options)
 1. [Mappings](#mappings)
 1. [Commands](#commands)
@@ -51,6 +52,37 @@ If you are not using any package manager, download the [tarball](https://github.
 cd ~/.vim
 tar --strip=1 -zxf vim-markdown-master.tar.gz
 ```
+
+## Basic usage
+
+### Folding
+
+Folding is enabled for headers by default.
+
+The following commands are useful to open and close folds:
+
+- `zr`: reduces fold level throughout the buffer
+- `zR`: opens all folds
+- `zm`: increases fold level throughout the buffer
+- `zM`: folds everything all the way
+- `za`: open a fold your cursor is on
+- `zA`: open a fold your cursor is on recursively
+- `zc`: close a fold your cursor is on
+- `zC`: close a fold your cursor is on recursively
+
+[Options](#options) are available to disable folding or change folding style.
+
+Try `:help fold-expr` and `:help fold-commands` for details.
+
+### Concealing
+
+Concealing is set for some syntax such as bold, italic, code block and link.
+
+Concealing lets you conceal text with other text. The actual source text is not modified. If you put your cursor on the concealed line, the conceal goes away.
+
+[Options](#options) are available to disable or change concealing.
+
+Try `:help concealcursor` and `:help conceallevel` for details.
 
 ## Options
 
@@ -123,7 +155,7 @@ let g:vim_markdown_toc_autofit = 1
 
 ### Text emphasis restriction to single-lines
 
-By default text emphasis works across multiple lines until a closing token is found. However, it's possible to restrict text emphasis to a single line (ie, for it to be applied a closing token must be found on the same line). To do so:
+By default text emphasis works across multiple lines until a closing token is found. However, it's possible to restrict text emphasis to a single line (i.e., for it to be applied a closing token must be found on the same line). To do so:
 
 ```vim
 let g:vim_markdown_emphasis_multiline = 0
@@ -173,6 +205,37 @@ This will cause the following to be highlighted using the `cs` filetype syntax.
     ```
 
 Default is `['c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini']`.
+
+### Follow named anchors
+
+This feature allows the `ge` command to follow named anchors in links of the form
+`file#anchor` or just `#anchor`, where file may omit the `.md` extension as
+usual. Two variables control its operation:
+
+```vim
+let g:vim_markdown_follow_anchor = 1
+```
+
+This tells vim-markdown whether to attempt to follow a named anchor in a link or
+not. When it is 1, and only if a link can be split in two parts by the pattern
+'#', then the first part is interpreted as the file and the second one as the
+named anchor. This also includes urls of the form `#anchor`, for which the first
+part is considered empty, meaning that the target file is the current one. After
+the file is opened, the anchor will be searched.
+
+Default is `0`.
+
+```vim
+let g:vim_markdown_anchorexpr = "'<<'.v:anchor.'>>'"
+```
+
+This expression will be evaluated substituting `v:anchor` with a quoted string
+that contains the anchor to visit. The result of the evaluation will become the
+real anchor to search in the target file. This is useful in order to convert
+anchors of the form, say, `my-section-title` to searches of the form `My Section
+Title` or `<<my-section-title>>`.
+
+Default is `''`.
 
 ### Syntax extensions
 
@@ -252,6 +315,38 @@ If you follow a link like this `[link text](link-url)` using the `ge` shortcut, 
 
 ```vim
 let g:vim_markdown_autowrite = 1
+```
+
+### Change default file extension
+
+If you would like to use a file extension other than `.md` you may do so using the `vim_markdown_auto_extension_ext` variable:
+
+```vim
+let g:vim_markdown_auto_extension_ext = 'txt'
+```
+
+### Do not automatically insert bulletpoints
+
+Automatically inserting bulletpoints can lead to problems when wrapping text
+(see issue #232 for details), so it can be disabled:
+
+```vim
+let g:vim_markdown_auto_insert_bullets = 0
+```
+
+In that case, you probably also want to set the new list item indent to 0 as
+well, or you will have to remove an indent each time you add a new list item:
+
+```vim
+let g:vim_markdown_new_list_item_indent = 0
+```
+
+### Change how to open new files
+
+By default when following a link the target file will be opened in your current buffer.  This behavior can change if you prefer using splits or tabs by using the `vim_markdown_edit_url_in` variable.  Possible values are `tab`, `vsplit`, `hsplit`, `current` opening in a new tab, vertical split, horizontal split, and current buffer respectively.  Defaults to current buffer if not set:
+
+```vim
+let g:vim_markdown_edit_url_in = 'tab'
 ```
 
 ## Mappings
