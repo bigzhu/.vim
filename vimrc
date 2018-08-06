@@ -134,3 +134,7 @@ if v:version >= 703
     set undodir=~/.vimundodir
     set undofile
 endif
+"Tagbar 需要标准的 bash 来执行一些东西。xonsh 会报错
+set shell=/bin/bash
+
+
