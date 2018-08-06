@@ -2,6 +2,10 @@
 我的 .vim 和 .vimrc 文件
 
 因为我实在太喜欢折腾了. 所以还是记录下历史记录
+
+##
+mac 下先执行 `brew install macvim --override-system-vim`, 不然复制粘贴不行的
+
 # 文件说明
 - 直接把项目 clone 到 ~/ 目录下 
 - install.sh 安装脚本, 仅仅是建立软链接到 ~/ 下, ~~mac 下默认没有 realpath 无法使用~~ 就是建立个软链接到~/下
