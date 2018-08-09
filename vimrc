@@ -24,9 +24,10 @@ filetype plugin indent on
 syntax on
 "colorscheme 主题/配色
 "set t_Co=256
-"colorscheme Tomorrow-Night
-set background=dark
-colorscheme solarized
+colorscheme Tomorrow-Night
+"set background=dark
+"set background=light
+"colorscheme solarized
 
 "自动 read 变化
 set autoread 

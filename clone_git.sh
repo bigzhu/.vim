@@ -1,6 +1,8 @@
 #! /bin/bash
 cd bundle
-git clone https://github.com/majutsushi/tagbar # 
+git clone https://github.com/dart-lang/dart-vim-plugin # flutter
+git clone https://github.com/bigzhu/vim-go.git # go lang
+git clone https://github.com/majutsushi/tagbar # markdown 左边的目录  
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone git://github.com/altercation/vim-colors-solarized.git
 git clone git@github.com:bigzhu/nerdtree.git
