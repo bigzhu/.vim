@@ -1,3 +1,4 @@
+!!! 停止更新, 迁移到新的项目 [vimrc](https://github.com/bigzhu/vimrc)
 # vim_conf
 我的 .vim 和 .vimrc 文件
 

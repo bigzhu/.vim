@@ -1,5 +1,6 @@
 #! /bin/bash
 cd bundle
+git clone https://github.com/vobornik/vim-mql4.git # mql4
 git clone https://github.com/dart-lang/dart-vim-plugin # flutter
 git clone https://github.com/bigzhu/vim-go.git # go lang
 git clone https://github.com/majutsushi/tagbar # markdown 左边的目录  
